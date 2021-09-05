@@ -1,9 +1,7 @@
 
 # PH Sensor
 
-An ESP32 connected to a PH Sensor and logging data into Home Assistant using ESP Home
-
-[TOC]
+ESP32 connected to a PH Sensor and logging data into Home Assistant using ESP Home
 
 # Parts List
 
@@ -127,7 +125,7 @@ PH 7 -> 1.10606
 
 The formulae would be -6.0952x+13.752
 
-
+<img src="../../devices/ph_sensor/ph_calibration.png">
 
 
 
