@@ -6,7 +6,7 @@ ESP32 connected to a PH Sensor and logging data into Home Assistant using ESP Ho
 # Parts List
 
 - ESP32
-- PH Probe, meter and calibration fluids 
+- PH Probe, meter and two calibration fluids 
 - 5V Regulated power supply
 - Analog to Digital converter
 - Pin Headers
@@ -22,8 +22,10 @@ ESP32 connected to a PH Sensor and logging data into Home Assistant using ESP Ho
 
 
 ## PH Sensor
-DF Robot PH Sensor https://www.dfrobot.com/product-1782.html , cheaper alternatives are available on aliexpress but in testing have not been as reliable or long lasting
+DF Robot PH Sensor https://www.dfrobot.com/product-1782.html , cheaper alternatives are available on aliexpress but in testing have not been as reliable or long lasting 
 
+## Calibration solutions
+2 Calibration soloutions are required in order to determine the ph calculatation, the dfrobot comes with PH4 and PH7
 
 ## Power Supply
 A seperate 5V DC power regulated power supply was required as when using the ESP32s 5V USB power supply the PH probe worked fine during development but with PH probe inserted into the pool pipe the signal fluctuated widely.
