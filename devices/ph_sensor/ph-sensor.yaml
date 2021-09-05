@@ -1,0 +1,40 @@
+esphome:
+  name: ph-sensor
+  platform: ESP32
+  board: nodemcu-32s
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+  password: "xx"
+
+wifi:
+  ssid: "xx"
+  password: "xx"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Ph-Sensor Fallback Hotspot"
+    password: "xx"
+
+captive_portal:
+
+i2c:
+  sda: GPIO21
+  scl: GPIO22
+  scan: True
+  
+ads1115:
+  - address: 0x48
+sensor:
+  - platform: ads1115
+    multiplexer: 'A0_GND'
+    gain: 6.144
+    name: "PH Sensor"
+    filters:
+    - lambda: return x * -5.8252 + 15.767;
+    unit_of_measurement: "Ph"
