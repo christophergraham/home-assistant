@@ -121,6 +121,13 @@ In Excel
 - Use the equation to update the sensor lamda calculation
 
 
+If the following measurements were recorded
+PH 4 -> 1.59825
+PH 7 -> 1.10606
+
+The formulae would be -6.0952x+13.752
+
+
 
 
 
