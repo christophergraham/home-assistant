@@ -50,6 +50,11 @@ For connecting parts.
 A pc mount barrel plug power connector makes it easy to connect and disconnect the power supply as required.
 
 ## Board Layout
+<img src="../../devices/ph_sensor/board_layout.png">
+
+
+
+## Board with devices attached
 <img src="../../devices/ph_sensor/ph%20sensor.png">
 
 
