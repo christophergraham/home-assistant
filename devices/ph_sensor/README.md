@@ -119,11 +119,12 @@ In Excel
 - Use the equation to update the sensor lamda calculation
 
 
-If the following measurements were recorded
+If the following measurements were recorded against calibration solutions
+
 PH 4 -> 1.59825
 PH 7 -> 1.10606
 
-The formulae would be -6.0952x+13.752
+The formula would be -6.0952x+13.752
 
 <img src="../../devices/ph_sensor/ph_calibration.png">
 
