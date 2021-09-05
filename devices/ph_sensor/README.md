@@ -24,7 +24,7 @@ An ESP32 connected to a PH Sensor and logging data into Home Assistant using ESP
 
 
 ## PH Sensor
-I am using the DF Robot PH Sensor https://www.dfrobot.com/product-1782.html , cheaper alternatives are available on aliexpress but in testing have not been as reliable or long lasting
+DF Robot PH Sensor https://www.dfrobot.com/product-1782.html , cheaper alternatives are available on aliexpress but in testing have not been as reliable or long lasting
 
 
 ## Power Supply
@@ -32,7 +32,7 @@ A seperate 5V DC power regulated power supply was required as when using the ESP
 
 The ESP32 also performed fine when connected to a 9V DC regulated power supply
 
-Using a seperate power supply the signal does tend to still vary when pumps are running but in the range of 0.1 PH
+Using a seperate power supply the signal does tend to still vary when machinery is running on the same circuit but in the range of 0.1 PH
 
 ## Analog to Digital converted
 ADS1115, The ADS1115 analog to digital converter is required as the inbuilt A2Cis not accurate enough.
