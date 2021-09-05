@@ -8,7 +8,7 @@ An ESP32 connected to a PH Sensor and logging data into Home Assistant using ESP
 # Parts List
 
 - ESP32
-- PH Sensor and calibration fluid
+- PH Probe, meter and calibration fluids 
 - 5V Regulated power supply
 - Analog to Digital converter
 - Pin Headers
@@ -32,7 +32,7 @@ A seperate 5V DC power regulated power supply was required as when using the ESP
 
 The ESP32 also performed fine when connected to a 9V DC regulated power supply
 
-Using a seperate power supply the signall does tend to still vary when pumps are running but in the range of 0.1 PH
+Using a seperate power supply the signal does tend to still vary when pumps are running but in the range of 0.1 PH
 
 ## Analog to Digital converted
 ADS1115, The ADS1115 analog to digital converter is required as the inbuilt A2Cis not accurate enough.
@@ -49,7 +49,79 @@ For connecting parts.
 ## Power connector
 A pc mount barrel plug power connector makes it easy to connect and disconnect the power supply as required.
 
+# Board Layout
+
 ## Board Layout
+<img src="../../devices/ph_sensor/board_layout.png">
+
+
+
+## Board with devices attached
 <img src="../../devices/ph_sensor/ph%20sensor.png">
+
+# ESPHome Code
+In Home Assistant ESPHome add the i2C, ADS1115 and Sensor sections into your configuration.yaml
+
+
+```yaml
+esphome:
+  name: ph-sensor
+  platform: ESP32
+  board: nodemcu-32s
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+  password: "xx"
+
+wifi:
+  ssid: "xx"
+  password: "xx"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Ph-Sensor Fallback Hotspot"
+    password: "xx"
+
+captive_portal:
+
+i2c:
+  sda: GPIO21
+  scl: GPIO22
+  scan: True
+  
+ads1115:
+  - address: 0x48
+sensor:
+  - platform: ads1115
+    multiplexer: 'A0_GND'
+    gain: 6.144
+    name: "PH Sensor"
+    filters:
+    - lambda: return x * -5.8252 + 15.767;
+    unit_of_measurement: "Ph"
+```
+
+
+
+#Calibration
+Gently dry the probe before swapping into different solutions
+- insert probe into first PH solution and record the volatage 
+- insert probe into second PH solution and record the volatage 
+
+In Excel
+- Enter the PH and voltages
+- Chart the data, 
+- Add a trend line
+- Format the trendline to display the equation
+- Use the equation to update the sensor lamda calculation
+
+
+
+
 
 
